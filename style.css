@@ -1,4 +1,4 @@
-/* General Reset*/
+ /* General Reset*/
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body{
-    font-family: 'Arial', 'sans-serif';
+    font-family: 'Times-new-romans', 'sans-serif';
     line-height: 1.6;
     background-color:beige;
     color: black;
@@ -14,10 +14,12 @@ body{
 }
 
 header{
-    background-color:black;
-    color:white;
+    background-color:lightskyblue;
+    color: white;
     text-align:center;
     padding:20px 0;
+    margin-bottom: 20px;
+    border-radius: 15px;
 }
 
 header h1{
@@ -30,7 +32,8 @@ header nav ul{
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
+    font-style: italic;
 }
 
 header nav ul li a{
@@ -41,36 +44,84 @@ header nav ul li a{
 
 header nav ul li a:hover{
     text-decoration: underline;
+    font-size: 1.3rem;
+   
+}
+/* Rounded Block Section Styling */
+section {
+    background-color: white;
+    border-radius: 15px; /* Rounded edges for all sections */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 main{
     margin-top: 30px;
 }
 
-section{
-    margin-bottom:40px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 section h1{
+font-family: 'Times New Roman', Times, serif;
 font-size: 2rem;
 margin-bottom:15px;
 color: #007acc;
 }
 
-#profile{
+/* Profile Section */
+/* Profile Section Styling */
+#profile {
     text-align: center;
+    margin-bottom: 40px;
 }
 
-#profile-pic{
-    width: 70px;
-    height: 20px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+#profile h1 {
+    font-size: 2rem;
+    color: #007acc;
+    margin-bottom: 20px;
 }
+
+#profile-container {
+    display: flex; /* Enable flexbox for side-by-side layout */
+    justify-content: center; /* Center both blocks horizontally */
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Add space between the two blocks */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 20px;
+}
+
+/* Profile Picture Block */
+#profile-pic-container {
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    width: 200px; /* Fixed width for the profile picture block */
+    height: 200px; /* Fixed height for the profile picture block */
+}
+
+#profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits well */
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #007acc;
+}
+
+/* Profile Description Block */
+#profile-text {
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    flex: 1; /* Allow the text block to take up remaining space */
+    text-align: left; /* Align text to the left */
+    max-width: 500px; /* Limit the width of the text block */
+}
+
 ul{
     list-style: none;
     padding: 0;
@@ -94,16 +145,51 @@ a:hover{
     margin-bottom: 10px;
 }
 
-#projects ul li h2{
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+/* Projects Section */
+#projects {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#projects h1 {
+    font-size: 2rem;
     color: #007acc;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-#projects ul li p{
+/* Projects Container */
+#projects-container {
+    display: flex; /* Enables Flexbox */
+    justify-content: space-between; /* Evenly distribute the project blocks */
+    gap: 20px; /* Adds space between the columns */
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+/* Individual Project Block */
+.project {
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    flex: 1; /* Allow each block to take equal space */
+    max-width: 30%; /* Restrict each project block to one-third of the row */
+    text-align: center;
+}
+
+/* Typography for Project Block */
+.project h2 {
+    font-size: 1.3rem;
+    color: #007acc;
     margin-bottom: 10px;
+    font-family: monospace;
 }
 
+.project p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
 #skills ul{
     display: flex;
     flex-wrap: wrap;
@@ -133,48 +219,13 @@ footer{
  
 /* Responsive Design: Adjust for Smaller Screens */
 @media (max-width: 768px) {
-    header nav ul {
-      flex-direction: column;
-      gap: 10px;
+    #projects-container {
+        flex-direction: column;
+        gap: 20px; /* Consistent gap */
+        align-items: center; /* Center all blocks */
     }
-  
-    header h1 {
-      font-size: 2rem;
+
+    .project {
+        max-width: 100%; /* Full width for projects */
     }
-  
-    section h1 {
-      font-size: 1.8rem;
-    }
-  
-    #profile-pic {
-      width: 100px;
-      height: 100px;
-    }
-  
-    body {
-      padding: 10px;
-    }
-  }
-  
-  /* Extra Small Screens (Mobile) */
-  @media (max-width: 480px) {
-    header h1 {
-      font-size: 1.5rem;
-    }
-  
-    header nav ul {
-      gap: 5px;
-    }
-  
-    section h1 {
-      font-size: 1.5rem;
-    }
-  
-    #projects ul li h2 {
-      font-size: 1.2rem;
-    }
-  
-    footer {
-      font-size: 0.8rem;
-    }
-  }
+}
